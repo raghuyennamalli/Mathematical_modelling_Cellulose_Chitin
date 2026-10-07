@@ -11,7 +11,7 @@ from scipy.stats import poisson
 
 @dataclass
 class Parameters:
-    #substrate: crystalline chitin 
+    #substrate-crystalline chitin 
     dp_initial:        float = 300.0    
     dp_max:            int   = 350     
     loading_g_per_L:   float = 10.0                                              
