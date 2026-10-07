@@ -4,8 +4,8 @@ This repository contains python scripts for mathematical modeling of enzymatic c
 
 | File | Description |
 |---|---|
-| `cellulose_model.py` | Mathematical model for cellulose degradation by endoglucanase (EG), cellobiohydrolase (CBH), and beta-glucosidase (BG), with LPMO. |
-| `chitin_model.py` | Mathematical model for chitin degradation by chitinases and beta-N-acetylhexosaminidase, with LPMO. |
+| `cellulose_model.py` | Mathematical model for cellulose degradation by endoglucanase (EG), cellobiohydrolase (CBH), and beta-glucosidase (BG), with and without LPMO. |
+| `chitin_model.py` | Mathematical model for chitin degradation by chitinases and beta-N-acetylhexosaminidase, with and without LPMO. |
 | `cellulose_sensitivity.py` | Local sensitivity analysis of the cellulose model using +/-20% parameter perturbations and a central-difference calculation. |
 | `chitin_sensitivity.py` | Local sensitivity analysis of the chitin model using +/-20% parameter perturbations and a central-difference calculation. |
 | `figures_cellulose_model.py` | Script for generating cellulose model result figures. |
