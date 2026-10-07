@@ -1,17 +1,17 @@
-Mathematical modelling of cellulose and chitin degradation in the presence and absence of lytic polysaccharide monooxygenases
+**Mathematical modelling of cellulose and chitin degradation in the presence and absence of lytic polysaccharide monooxygenases**
 
-This repository contains Python scripts for mathematical modeling of enzymatic cellulose and chitin degradation using a shrinking-particle framework, with and without lytic polysaccharide monooxygenase (LPMO)-mediated oxidative cleavage.
+This repository contains python scripts for mathematical modeling of enzymatic cellulose and chitin degradation using a shrinking-particle framework, with and without lytic polysaccharide monooxygenase (LPMO)-mediated oxidative cleavage.
 
 | File | Description |
 |---|---|
-| `cellulose_model.py` | Mathematical model for cellulose degradation by endoglucanase (EG), cellobiohydrolase (CBH), and beta-glucosidase (BG), with an LPMO module. |
-| `chitin_model.py` | Mathematical model for chitin degradation by chitinases and beta-N-acetylhexosaminidase, with an LPMO module. |
+| `cellulose_model.py` | Mathematical model for cellulose degradation by endoglucanase (EG), cellobiohydrolase (CBH), and beta-glucosidase (BG), with LPMO. |
+| `chitin_model.py` | Mathematical model for chitin degradation by chitinases and beta-N-acetylhexosaminidase, with LPMO. |
 | `cellulose_sensitivity.py` | Local sensitivity analysis of the cellulose model using +/-20% parameter perturbations and a central-difference calculation. |
 | `chitin_sensitivity.py` | Local sensitivity analysis of the chitin model using +/-20% parameter perturbations and a central-difference calculation. |
-| `figures_cellulose_model.py` | Script for generating cellulose model result figures and product profiles. |
-| `figures_chitin_model.py` | Script for generating chitin model result figures and product profiles. |
+| `figures_cellulose_model.py` | Script for generating cellulose model result figures. |
+| `figures_chitin_model.py` | Script for generating chitin model result figures. |
 
-Model overview
+**Model overview**
 The framework represents cellulose and chitin as shrinking spherical particles whose accessible surface area changes during degradation. The model accounts for:
 - substrate particle geometry and surface-area changes
 - polymer-chain length distributions
@@ -37,18 +37,18 @@ This includes:
    
 The H2O2 supply is represented as a lumped input to the model.
 
-Simulation conditions
+**Simulation conditions**
 The models can be evaluated under two conditions:
 - -LPMO: LPMO terms are disabled to represent hydrolytic degradation alone.
 - +LPMO: H2O2-dependent LPMO activity is included together with hydrolysis.
 This allows the contribution of LPMO-mediated oxidative cleavage to be compared within the same framework.
 
-Sensitivity analysis
+**Sensitivity analysis**
 The sensitivity scripts perform a local sensitivity analysis using a +/-20% perturbation around each nominal parameter value and a central finite-difference calculation.
 The response variable is the predicted substrate conversion at 12 h.
 
 The normalized sensitivity coefficient is:
 S = (dY/Y) / (dP/P)
 
-Reference: 
+**Reference:** 
 A Mechanistic Model of the Enzymatic Hydrolysis of Cellulose. Levine et.al (2010), Biotechnology and Bioengineering.
