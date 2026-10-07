@@ -60,13 +60,7 @@ class Parameters:
     k_ascorbate_autox_per_h: float = 0.02
     lpmo_C1_fraction:   float = 1.0      
     exo_activity_on_C1ox: float = 0.68  
-#solid chains  C'_7..C'_DPmax           (mmol chains / dm^2)
-#soluble   C1..C6  (GlcNAc..(GlcNAc)6, mmol/L)
-#glcnac_ox  chitobionic_acid  oxidised_oligomers   (mmol/L, GlcNAc-equiv)
-#ends_ox_C1    (mmol/L; C1-oxidised solid ends)
-#Cu_II Cu_I Cu_dead H2O2 ascorbate      (uM)
-#endo_ads(endo)  exo_ads(exo)       (mmol/dm^2)
-#radius    (dm)
+
 class Model:
     def __init__(self, p: Parameters):
         self.p = p
@@ -100,10 +94,10 @@ class Model:
     #particle geometry 
     def _setup_geometry(self):
         p = self.p
-        sa_dm2_g = p.surface_area_m2_g * 100.0                 # m^2/g -> dm^2/g
-        self.radius0 = 3.0 / (sa_dm2_g * p.density_g_per_L)    # Eq.2 solved for R
-        area_per_L0  = sa_dm2_g * p.loading_g_per_L            # dm^2/L at t=0
-        self.n_particles = area_per_L0 / (4.0*np.pi*self.radius0**2)   # Eq.A1 -> N (const)
+        sa_dm2_g = p.surface_area_m2_g * 100.0                 
+        self.radius0 = 3.0 / (sa_dm2_g * p.density_g_per_L)   
+        area_per_L0  = sa_dm2_g * p.loading_g_per_L           
+        self.n_particles = area_per_L0 / (4.0*np.pi*self.radius0**2)  
 
     def area_per_volume(self, radius):
         return 4.0*np.pi*radius**2*self.n_particles          
@@ -361,7 +355,7 @@ class Model:
         # solid GlcNAc from the particle volume (independent of soluble pools)
         solid_GlcNAc = (4.0/3.0)*np.pi*r**3*self.p.density_g_per_L*self.n_particles/self.p.mw_GlcNAc_g_mmol
         native_soluble = np.sum([(k+1)*soluble[k] for k in range(6)], axis=0)
-        oxidised_soluble = 1.0*GlcNAc_ox + 2.0*chitobionic + oligo_ox        # GlcNAc-equiv
+        oxidised_soluble = 1.0*GlcNAc_ox + 2.0*chitobionic + oligo_ox       
         total = solid_GlcNAc + native_soluble + oxidised_soluble
         return dict(
             t=sol.t, radius=r,
