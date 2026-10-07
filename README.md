@@ -50,5 +50,3 @@ The response variable is the predicted substrate conversion at 12 h.
 The normalized sensitivity coefficient is:
 S = (dY/Y) / (dP/P)
 
-**Reference:** <br>
-A Mechanistic Model of the Enzymatic Hydrolysis of Cellulose. Levine et.al (2010), Biotechnology and Bioengineering.
