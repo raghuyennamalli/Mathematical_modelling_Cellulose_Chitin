@@ -11,7 +11,7 @@ This repository contains python scripts for mathematical modeling of enzymatic c
 | `figures_cellulose_model.py` | Script for generating cellulose model result figures. |
 | `figures_chitin_model.py` | Script for generating chitin model result figures. |
 
-**Model overview**
+**Model overview**<br>
 The framework represents cellulose and chitin as shrinking spherical particles whose accessible surface area changes during degradation. The model accounts for:
 - substrate particle geometry and surface-area changes
 - polymer-chain length distributions
@@ -37,18 +37,18 @@ This includes:
    
 The H2O2 supply is represented as a lumped input to the model.
 
-**Simulation conditions**
+**Simulation conditions**<br>
 The models can be evaluated under two conditions:
 - -LPMO: LPMO terms are disabled to represent hydrolytic degradation alone.
 - +LPMO: H2O2-dependent LPMO activity is included together with hydrolysis.
 This allows the contribution of LPMO-mediated oxidative cleavage to be compared within the same framework.
 
-**Sensitivity analysis**
+**Sensitivity analysis**<br>
 The sensitivity scripts perform a local sensitivity analysis using a +/-20% perturbation around each nominal parameter value and a central finite-difference calculation.
 The response variable is the predicted substrate conversion at 12 h.
 
 The normalized sensitivity coefficient is:
 S = (dY/Y) / (dP/P)
 
-**Reference:** 
+**Reference:** <br>
 A Mechanistic Model of the Enzymatic Hydrolysis of Cellulose. Levine et.al (2010), Biotechnology and Bioengineering.
