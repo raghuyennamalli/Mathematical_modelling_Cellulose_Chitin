@@ -425,7 +425,4 @@ if __name__ == "__main__":
               f" | (GlcNAc)2 peak {d['chitobiose'].max()*1e3:6.1f} uM"
               f" | mass_err {d['mass_error']:.1e}{tag}")
 
-    print("\n   The dimer (GlcNAc)2 accumulates because the GH20 chitobiase")
-    print("   (0.024 s^-1 on chitobiose, Enterobacter, ref 10.1038/s41598-017-05140-3)")
-    print("   is slow relative to the chitinases producing it.  Reported chitobiose")
-    print("   kcat/Km spans ~5 orders across enzymes, so this rests on enzyme choice.")
+    
